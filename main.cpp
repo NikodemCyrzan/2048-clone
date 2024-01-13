@@ -128,32 +128,28 @@ void DrawView()
     printw("%d", score);
 }
 
+int mapIndex = 1;
+void MapColor(int number, int numberColor, int backgroundColor)
+{
+    init_pair(mapIndex, numberColor, backgroundColor);
+    colorsMap[number] = mapIndex;
+    mapIndex++;
+}
+
 void MapColors()
 {
-    init_pair(1, COLOR_RED, COLOR_BLACK);
-    colorsMap[2] = 1;
-    init_pair(2, COLOR_GREEN, COLOR_BLACK);
-    colorsMap[4] = 2;
-    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
-    colorsMap[8] = 3;
-    init_pair(4, COLOR_BLUE, COLOR_BLACK);
-    colorsMap[16] = 4;
-    init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
-    colorsMap[32] = 5;
-    init_pair(6, COLOR_CYAN, COLOR_BLACK);
-    colorsMap[64] = 6;
-    init_pair(7, COLOR_BLACK, COLOR_RED);
-    colorsMap[128] = 7;
-    init_pair(8, COLOR_BLACK, COLOR_GREEN);
-    colorsMap[256] = 8;
-    init_pair(9, COLOR_BLACK, COLOR_YELLOW);
-    colorsMap[512] = 9;
-    init_pair(10, COLOR_BLACK, COLOR_BLUE);
-    colorsMap[1024] = 10;
-    init_pair(11, COLOR_BLACK, COLOR_MAGENTA);
-    colorsMap[2048] = 11;
-    init_pair(12, COLOR_BLACK, COLOR_CYAN);
-    colorsMap[4096] = 12;
+    MapColor(2, COLOR_RED, COLOR_BLACK);
+    MapColor(4, COLOR_GREEN, COLOR_BLACK);
+    MapColor(8, COLOR_YELLOW, COLOR_BLACK);
+    MapColor(16, COLOR_BLUE, COLOR_BLACK);
+    MapColor(32, COLOR_MAGENTA, COLOR_BLACK);
+    MapColor(64, COLOR_CYAN, COLOR_BLACK);
+    MapColor(128, COLOR_BLACK, COLOR_RED);
+    MapColor(256, COLOR_BLACK, COLOR_GREEN);
+    MapColor(512, COLOR_BLACK, COLOR_YELLOW);
+    MapColor(1024, COLOR_BLACK, COLOR_MAGENTA);
+    MapColor(2048, COLOR_BLACK, COLOR_MAGENTA);
+    MapColor(4096, COLOR_BLACK, COLOR_CYAN);
 }
 
 void GameOver()
